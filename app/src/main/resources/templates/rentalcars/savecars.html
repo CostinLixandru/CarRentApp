@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Save new rental car</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<br>
+
+
+
+<br>
+
+<div class = "container">
+<h3>Page for saving new rental cars</h3>
+
+<p class="h4 mb-4"> Save New Rental Cars</p>
+		<form action="#" th:action="@{/rentalcars/save}" th:object="${car}" method="POST">					
+				<input type="hidden" th:field="*{id}" /><!-- pentru update !! -->
+				<input type = "text" th:field="*{brand}" class="form-control mb-4 col-4" placeholder="Car brand">
+				<input type = "text" th:field="*{type}" class="form-control mb-4 col-4" placeholder="Car type">
+				<input type = "text" th:field="*{color}" class="form-control mb-4 col-4" placeholder="Car color">
+				<input type = "text" th:field="*{noKm}" class="form-control mb-4 col-4" placeholder="Number of kilometers">
+				<button type = "submit" class="btn btn-info col-2">Save</button>
+		</form>
+		<hr>
+		<a th:href="@{/rentalcars/list}"> Back to Car rental List</a>
+
+</div>
+
+
+</body>
+
+
+</html>
