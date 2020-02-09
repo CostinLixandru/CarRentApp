@@ -24,16 +24,7 @@ public class CarRentalServiceImpl implements CarRentalService{
    
    @Override
    public Car findById(int n){
-        Optional<Car> result = carRepository.findById(n);
-        
-        Car car = null;
-        
-        if(result.isPresent()){
-            car=result.get();
-        }else{
-            throw new RuntimeException("the id " + n + " is not found");
-        }
-        return car;
+        return findAll().get(n);
         
    }
    @Override
